@@ -83,7 +83,8 @@ pipeline {
             }
           }
       }
-      stage('docker-package'){
+
+      stage('deploy to dev'){
           agent any
           when{
             branch 'master'
@@ -94,6 +95,7 @@ pipeline {
             sh 'docker-compose up -d'
           }
     }
+
   }
   post{
     always{
