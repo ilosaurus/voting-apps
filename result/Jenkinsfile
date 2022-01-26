@@ -45,8 +45,6 @@ pipeline {
         }
         steps{
           echo 'Packaging result app with docker'
-          pwd
-          
           script{
             docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
                 def workerImage = docker.build("ilosaurus/result:v${env.BUILD_ID}", "./result")

@@ -47,8 +47,6 @@ pipeline {
         }
         steps{
           echo 'Packaging vote app with docker'
-          pwd
-          
           script{
             docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
                 def workerImage = docker.build("ilosaurus/vote:v${env.BUILD_ID}", "./vote")
