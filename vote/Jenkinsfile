@@ -35,8 +35,9 @@ pipeline {
       steps{
         echo 'Running Unit Tets on vote app'
         dir('vote'){
+          sh 'pip install --upgrade pip'
           sh 'pip install -r requirements.txt'
-          sh 'which nosetest'
+          // sh 'which nosetest'
           // sh 'nosetest -v'
         }
       }
