@@ -73,8 +73,6 @@ pipeline {
           }
           steps{
             echo 'Packaging worker app with docker'
-            pwd
-            
             script{
               docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
                   def workerImage = docker.build("ilosaurus/worker:v${env.BUILD_ID}", "./worker")
@@ -86,17 +84,17 @@ pipeline {
           }
       }
 
-      stage('deploy to dev'){
-          agent any
-          when{
-            branch 'master'
-          }
-          steps{
-            echo 'Deploy instavote app with docker compose'
-            sh 'docker-compose down --remove '
-            sh 'docker-compose up -d'
-          }
-      }
+      // stage('deploy to dev'){
+      //     agent any
+      //     when{
+      //       branch 'master'
+      //     }
+      //     steps{
+      //       echo 'Deploy instavote app with docker compose'
+      //       sh 'docker-compose down --remove '
+      //       sh 'docker-compose up -d'
+      //     }
+      // }
 
   }
   post{
