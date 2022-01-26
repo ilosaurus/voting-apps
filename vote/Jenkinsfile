@@ -36,7 +36,8 @@ pipeline {
         echo 'Running Unit Tets on vote app'
         dir('vote'){
           sh 'pip install -r requirements.txt'
-          sh 'nosetest -v'
+          sh 'which nosetest'
+          // sh 'nosetest -v'
         }
       }
     }
