@@ -8,6 +8,7 @@ WORKDIR /app
 # Install our requirements.txt
 ADD requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
+RUN ls
 
 # Copy our code from the current folder to /app inside the container
 ADD . /app
