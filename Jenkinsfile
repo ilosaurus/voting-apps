@@ -78,7 +78,7 @@ pipeline {
                 def workerImage = docker.build("ilosaurus/worker:v${env.BUILD_ID}", "./worker")
                 workerImage.push()
                 workerImage.push("${env.BRANCH_NAME}")
-                // workerImage.push("latest")
+                workerImage.push("latest")
             }
           }
         }
@@ -132,6 +132,7 @@ pipeline {
                 def workerImage = docker.build("ilosaurus/result:v${env.BUILD_ID}", "./result")
                 workerImage.push()
                 workerImage.push("${env.BRANCH_NAME}")
+                workerImage.push("latest")
             }
           }
         }
@@ -190,6 +191,7 @@ pipeline {
                 def workerImage = docker.build("ilosaurus/vote:v${env.BUILD_ID}", "./vote")
                 workerImage.push()
                 workerImage.push("${env.BRANCH_NAME}")
+                workerImage.push("latest")
             }
           }
         }
