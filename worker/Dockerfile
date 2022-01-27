@@ -5,3 +5,5 @@ RUN mvn package && mv target/worker-jar-with-dependencies.jar /run/worker.jar &&
 CMD java -jar /run/worker.jar
 
 
+
+

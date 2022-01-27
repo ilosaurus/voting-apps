@@ -45,7 +45,7 @@ services:
     image: ilosaurus/result:latest
     build: ./result
     ports:
-      - 5001:4000
+      - 5100:4000
     depends_on:
       - db
     networks:
